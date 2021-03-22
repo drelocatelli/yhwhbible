@@ -4,17 +4,26 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" type="text/css" rel="stylesheet" />
         <title>Busca Salmos - Tehilim Biblia de Yhwh</title>
     </head>
 
     <body>
-        
-        <form name="getsalmo" method="get">
+        <div class="form-group">
+            <h2 style="font-family:sans-serif; padding:0; margin:0;">Salmos - Tehilim (Yhwh)</h2><br>
+            <form name="getsalmo" method="get">
 
-            <input name="salmo" type="number" min="1" max="150">
-            <button type="button">Buscar</button>
+                <input name="salmo" type="number" min="1" max="150" class="form-control" value='1'>
+                <button type="button" class="btn btn-default">Buscar</button>
 
-        </form>
+            </form>
+
+            <div id='salmo' style="padding-top: 130px;">
+                ...
+            </div>
+        </div>
+
+       
 
     </body>
 
