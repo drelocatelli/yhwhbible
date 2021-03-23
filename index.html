@@ -56,9 +56,9 @@
 
         let url = new URL(`${window.location.href}?salmo=${salmo.value}`)
         let params = new URLSearchParams(url.search);
-        params.delete(`salmo`)
 
-        console.log(url.href)
+        url.href = `${url.href}`
+
         history.pushState({}, null, url.href);
 
     }
