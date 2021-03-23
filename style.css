@@ -163,8 +163,8 @@ button {
 }
 
 #salmo{
-  font-size: 28px;
-  padding-top:60;
+  font-size: 24px;
+  padding-top:60px;
   font-family:'Kiwi Maru';
   width: 800px;  
   word-spacing: 0.3em;
@@ -180,6 +180,6 @@ button {
   #salmo{
     width: fit-content;  
     padding:0 25px;
-    font-size:20px;
+    font-size:19px;
   }
 }
