@@ -182,4 +182,9 @@ button {
     padding:0 25px;
     font-size:19px;
   }
+
+  .btn-default{
+    padding: 3px;
+    font-size: 15px;
+  }
 }
