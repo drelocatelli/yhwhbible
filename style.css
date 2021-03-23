@@ -163,6 +163,7 @@ button {
 
 #salmo{
   font-size: 28px;
+  width: 800px;  
   word-spacing: 0.3em;
   letter-spacing: 2px;
   margin-bottom: 180px;
@@ -171,11 +172,5 @@ button {
 @media screen and(max-width:700px){
   #salmo{
     width: fit-content;  
-  }
-}
-
-@media screen and(min-width:800px){
-  #salmo{
-    width: 800px;  
   }
 }
