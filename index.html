@@ -46,7 +46,7 @@
     }
 
     salmo.onchange = function(){
-        
+        history.pushState({}, null, `${window.location.href}?salmo=${salmo.value}`);
     }
 
     console.log(formulario)
