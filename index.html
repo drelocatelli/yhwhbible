@@ -70,11 +70,8 @@
            var response = JSON.parse(response)
 
            console.log(response)
-           try{
-                salmoler.innerHTML = response.msg
-           }catch(e){
-                salmoler.innerHTML = 'Ocorreu um erro, tente novamente mais tarde.'
-           }
+
+           salmoler.innerHTML = response.msg
 
          });
 
