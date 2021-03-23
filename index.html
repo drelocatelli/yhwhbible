@@ -40,7 +40,8 @@
 
     let formulario = document.querySelector('form[name=getsalmo]')
 
-    formulario.onsubmit = function(){
+    formulario.onsubmit = function(e){
+        e.preventDefault()
         alert('submetido')
     }
 
