@@ -42,7 +42,7 @@
     let salmo = formulario.querySelector('input[name=salmo]')
 
     var prmstr = window.location.search.substr(1);
-    salmoNum = prmstr.replace('salmo=')
+    salmoNum = prmstr.replace('salmo=','')
     salmo.value = salmoNum
 
     formulario.onsubmit = function(e){
