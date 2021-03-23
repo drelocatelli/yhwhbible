@@ -46,7 +46,7 @@
         e.preventdefault()
     }
 
-    salmo.onblur = function(){
+    salmo.onclick = function(){
         history.pushState({}, null, `${window.location.href}?salmo=${salmo.value}`);
     }
 
