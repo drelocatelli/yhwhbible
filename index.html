@@ -54,7 +54,7 @@
     formulario.onsubmit = function(e){
         e.preventDefault()
 
-        history.pushState({}, null, 'ola mundo');
+        history.pushState({}, null, `${window.location.href}?salmo=${salmoNum}`);
     }
 
 
