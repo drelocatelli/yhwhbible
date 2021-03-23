@@ -55,8 +55,7 @@
         e.preventDefault()
 
         let url = new URL(`${window.location.href}?salmo=${salmo.value}`)
-
-        history.pushState({}, null, `${url.href}`);
+        console.log(url)
     }
 
 
