@@ -65,8 +65,16 @@
     }
 
     formulario.onsubmit = function(e){
-        // e.preventDefault()
+        e.preventDefault()
+
+        // let url = new URL(`${window.location.href}?salmo=${salmo.value}`)
+        // let params = new URLSearchParams(url.search);
+
+        // url.href = `${url.href}`
+
+        // history.pushState({}, null, url.href);
         getSalmo()
+
     }
 
 
