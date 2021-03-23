@@ -172,5 +172,6 @@ button {
 @media screen and (max-width:700px){
   #salmo{
     width: fit-content;  
+    padding:0 25px;
   }
 }
