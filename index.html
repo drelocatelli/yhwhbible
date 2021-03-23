@@ -47,19 +47,7 @@
     salmoNum = prmstr.replace('salmo=','')
     salmo.value = salmoNum
 
-    if(salmoNum == ''){
-        salmo.value = '1'
-    }
-
-    formulario.onsubmit = function(e){
-        // e.preventDefault()
-
-        // let url = new URL(`${window.location.href}?salmo=${salmo.value}`)
-        // let params = new URLSearchParams(url.search);
-
-        // url.href = `${url.href}`
-
-        // history.pushState({}, null, url.href);
+    function getSalmo(){
         let request = new Request(`https://www.abibliadigital.com.br/api/verses/nvi/sl/${salmo.value}`, {
            method: 'GET',
          });
@@ -87,6 +75,22 @@
 
 
          });
+    }
+
+    if(salmoNum == ''){
+        salmo.value = '1'
+    }
+
+    formulario.onsubmit = function(e){
+        // e.preventDefault()
+
+        // let url = new URL(`${window.location.href}?salmo=${salmo.value}`)
+        // let params = new URLSearchParams(url.search);
+
+        // url.href = `${url.href}`
+
+        // history.pushState({}, null, url.href);
+        
 
     }
 
