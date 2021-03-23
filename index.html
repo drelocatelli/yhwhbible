@@ -54,9 +54,9 @@
     formulario.onsubmit = function(e){
         e.preventDefault()
 
-        let url = new URL(`${window.location.href}`)
+        let url = new URL(`${window.location.href}?salmo=${salmo.value}`)
 
-        history.pushState({}, null, `${window.location.href}?salmo=${salmo.value}`);
+        // history.pushState({}, null, `${window.location.href}?salmo=${salmo.value}`);
     }
 
 
