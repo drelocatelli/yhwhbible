@@ -75,9 +75,11 @@
             for(let i = 0; i <= response.length; i++){
                 console.log(response[i].text)
                 leitura += response[i].text
+
+                salmoler.innerHTML = leitura
+
             }
 
-           salmoler.innerHTML = leitura
 
          });
 
