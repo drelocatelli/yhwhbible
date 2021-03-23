@@ -56,7 +56,7 @@
 
         let url = new URL(`${window.location.href}?salmo=${salmo.value}`)
 
-        history.pushState({}, null, `${window.location.href}?salmo=${salmo.value}`);
+        history.pushState({}, null, `${url.href}`);
     }
 
 
