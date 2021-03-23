@@ -102,6 +102,9 @@
 
     sorteioBtn.onclick = function(){
         let num = Math.floor(Math.random() * 151)
+        if(num == 0){
+            num = 1
+        }
         salmo.value = num
         salmoBtn.click()
     }
