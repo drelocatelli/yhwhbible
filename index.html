@@ -44,8 +44,8 @@
     if(salmo.value == ''){
         salmo.value = '1'    
     }
-    
-    if(salmo.value != ''){
+
+    if(salmo.value >= '1'){
         var prmstr = window.location.search.substr(1);
         salmoNum = prmstr.replace('salmo=','')
         salmo.value = salmoNum
