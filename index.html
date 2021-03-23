@@ -50,17 +50,10 @@
     let salmotitle = document.querySelector('titulo')
     let salmoler = document.querySelector('salmo')
     let copyBtn = document.querySelector('button[name=copy]')
-    var error = false
  
     salmo.value = '1'
     salmo.ondblclick = function(){
         salmo.select()
-    }
-
-    if(!error){
-        copyBtn.style.display = 'block'
-    }else{
-        copyBtn.style.display = 'none'
     }
 
     copyBtn.onclick = function(){
@@ -95,11 +88,12 @@ ${salmoler.innerText}`
            salmotitle.innerHTML = `Tehilim ${salmo.value}` 
 
            if(response.msg){
-               error = true
+            copyBtn.style.display = 'none'
+
                 salmoler.innerHTML = 'Ocorreu um erro ao carregar, tente novamente mais tarde.'
                 return
            }else{
-               error = false
+                copyBtn.style.display = 'block'
            }
 
            response = response.verses
