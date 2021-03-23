@@ -48,13 +48,15 @@
         salmoNum = prmstr.replace('salmo=','')
         salmo.value = salmoNum
     } 
-    
+
     if(salmoNum == ''){
         salmo.value = '1'
     }
 
     formulario.onsubmit = function(e){
         e.preventDefault()
+
+        params()
     }
 
 
