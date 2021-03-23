@@ -175,7 +175,7 @@ button {
 
 @media screen and (max-width:800px){
   .form-control{
-    width:200px;
+    width:142px;
   }
   #salmo{
     width: fit-content;  
