@@ -90,6 +90,15 @@
         },500)
     }
 
+    function sortearSalmo(){
+        let num = Math.floor(Math.random() * 151)
+        if(num == 0){
+            num = 1
+        }
+        salmo.value = num
+        salmoBtn.click()
+    }
+
     if(salmoNum == ''){
         salmo.value = '1'
     }
@@ -101,12 +110,7 @@
     }
 
     sorteioBtn.onclick = function(){
-        let num = Math.floor(Math.random() * 151)
-        if(num == 0){
-            num = 1
-        }
-        salmo.value = num
-        salmoBtn.click()
+        sortearSalmo
     }
 
     formulario.onsubmit = function(e){
