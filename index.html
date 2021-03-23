@@ -72,10 +72,12 @@
            response = response.verses
 
            let leitura = ''
-
-           response.forEach(function(i){
-               leitura += i
-           })
+            for(let i = 0; i <= response.length; i++){
+                console.log(response[i])
+            }
+        //    response.forEach(function(i){
+        //        leitura += i
+        //    })
 
            console.log(leitura)
            console.log(response)
