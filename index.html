@@ -70,10 +70,8 @@
            var response = JSON.parse(response)
 
            try{
-
+                salmoler.innerHTML = response.msg
            }catch(e){
-            salmoler.innerHTML = response.msg
-
            }
 
          });
