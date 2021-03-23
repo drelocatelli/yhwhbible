@@ -53,12 +53,12 @@
     salmoNum = prmstr.replace('salmo=','')
     salmo.value = salmoNum
 
-    function getSalmo(){
+    function getSalmo(numSalmo = salmo.value){
         salmotitle.innerHTML = 'Tehilim ?'
         salmoler.innerHTML = 'Carregando...'
         setTimeout(function(){
             
-        let request = new Request(`https://www.abibliadigital.com.br/api/verses/nvi/sl/${salmo.value}`, {
+        let request = new Request(`https://www.abibliadigital.com.br/api/verses/nvi/sl/${numSalmo}`, {
            method: 'GET',
          });
 
@@ -91,15 +91,12 @@
     }
 
     function sortearSalmo(){
-        var executed = false
-        return function(){
-            let num = Math.floor(Math.random() * 151)
-            if(num == 0){
-                num = 1
-            }
-            salmo.value = num
-            salmoBtn.click()
+        let num = Math.floor(Math.random() * 151)
+        if(num == 0){
+            num = 1
         }
+        salmo.value = num
+        salmoBtn.click()
     }
 
     if(salmoNum == ''){
