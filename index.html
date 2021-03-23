@@ -53,19 +53,19 @@
     salmoNum = prmstr.replace('salmo=','')
     salmo.value = salmoNum
 
-    function getSalmo(numSalmo = salmo.value){
+    function getSalmo(){
         salmotitle.innerHTML = 'Tehilim ?'
         salmoler.innerHTML = 'Carregando...'
         setTimeout(function(){
             
-        let request = new Request(`https://www.abibliadigital.com.br/api/verses/nvi/sl/${numSalmo}`, {
+        let request = new Request(`https://www.abibliadigital.com.br/api/verses/nvi/sl/${salmo.value}`, {
            method: 'GET',
          });
 
          fetch(request).then(function(response) { return response.text() }).then(function(response){
            var response = JSON.parse(response)
 
-           salmotitle.innerHTML = `Tehilim ${numSalmo}` 
+           salmotitle.innerHTML = `Tehilim ${salmo.value}` 
 
            if(response.msg){
                 salmoler.innerHTML = 'Ocorreu um erro ao carregar, tente novamente mais tarde.'
@@ -95,21 +95,22 @@
         if(num == 0){
             num = 1
         }
-        return num
+        salmo.value = num
+        salmoBtn.click()
     }
 
     if(salmoNum == ''){
         salmo.value = '1'
     }
 
-    getSalmo(sortearSalmo())
+    sortearSalmo()
 
     salmoBtn.onclick = function(){
         getSalmo()
     }
 
     sorteioBtn.onclick = function(){
-        getSalmo(sortearSalmo())
+        sortearSalmo()
     }
 
     formulario.onsubmit = function(e){
