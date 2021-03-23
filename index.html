@@ -70,11 +70,11 @@ ${salmoler.innerText}`
         textarea.select()
         document.execCommand('Copy')
         textarea.style.display = 'none'
-        Swal.fire(
+        Swal.fire({
             icon: 'info',
             title:'Copiado!',
             confirmButtonText: 'ok'
-        )
+        })
         
     }
 
