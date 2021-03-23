@@ -67,7 +67,11 @@ ${salmoler.innerText}`
         textarea.select()
         document.execCommand('Copy')
         textarea.style.display = 'none'
-
+        Swal.fire(
+          'Good job!',
+          'You clicked the button!',
+          'success'
+        )
         
     }
 
