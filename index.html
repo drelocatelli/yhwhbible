@@ -85,6 +85,8 @@ ${salmoler.innerText}`
     function getSalmo(){
         salmotitle.innerHTML = 'Tehilim ?'
         salmoler.innerHTML = 'Carregando...'
+        copyBtn.style.display = 'none'
+
         setTimeout(function(){
             
         let request = new Request(`https://www.abibliadigital.com.br/api/verses/nvi/sl/${salmo.value}`, {
@@ -97,7 +99,6 @@ ${salmoler.innerText}`
            salmotitle.innerHTML = `Tehilim ${salmo.value}` 
 
            if(response.msg){
-            copyBtn.style.display = 'none'
 
                 salmoler.innerHTML = 'Ocorreu um erro ao carregar, tente novamente mais tarde.'
                 return
