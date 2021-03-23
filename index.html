@@ -69,6 +69,8 @@
 
            response = response.verses
 
+           salmotitle.innerHTML = `Tehilim ${salmo.value}` 
+
            var leitura = ''
             for(let i = 0; i <= response.length; i++){
                 leitura += response[i].text
