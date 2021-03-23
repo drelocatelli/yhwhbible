@@ -43,20 +43,16 @@
  
     salmo.value = '1'
 
-    function params(){
-        var prmstr = window.location.search.substr(1);
-        salmoNum = prmstr.replace('salmo=','')
-        salmo.value = salmoNum
-    } 
-    params()
+    var prmstr = window.location.search.substr(1);
+    salmoNum = prmstr.replace('salmo=','')
+    salmo.value = salmoNum
+
     if(salmoNum == ''){
         salmo.value = '1'
     }
 
     formulario.onsubmit = function(e){
         e.preventDefault()
-
-        params()
     }
 
 
