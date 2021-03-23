@@ -74,8 +74,10 @@
 
            response = response.verses
 
+           var leitura = ''
             for(let i = 0; i <= response.length; i++){
-                var leitura = response[i].text
+                console.log(response[i].text)
+                leitura += response[i].text
             }
             console.log(leitura)
 
