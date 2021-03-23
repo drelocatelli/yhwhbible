@@ -164,6 +164,8 @@ button {
 
 #salmo{
   font-size: 28px;
+  padding-top:60;
+  font-family:'Kiwi Maru';
   width: 800px;  
   word-spacing: 0.3em;
   letter-spacing: 2px;
