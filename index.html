@@ -91,13 +91,15 @@
     }
 
     function sortearSalmo(){
-        let num = Math.floor(Math.random() * 151)
-        if(num == 0){
-            num = 1
+        var executed = false
+        return function(){
+            let num = Math.floor(Math.random() * 151)
+            if(num == 0){
+                num = 1
+            }
+            salmo.value = num
+            salmoBtn.click()
         }
-        salmo.value = num
-        salmoBtn.click()
-        break sortearSalmo()
     }
 
     if(salmoNum == ''){
