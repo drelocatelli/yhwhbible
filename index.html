@@ -37,11 +37,13 @@
 
     let formulario = document.querySelector('form[name=getsalmo]')
     let salmo = formulario.querySelector('input[name=salmo]')
+    let salmoBtn = formulario.querySelector('button')
 
     let salmotitle = document.querySelector('titulo')
     let salmoler = document.querySelector('salmo')
  
     salmo.value = '1'
+    salmo
 
     var prmstr = window.location.search.substr(1);
     salmoNum = prmstr.replace('salmo=','')
