@@ -19,12 +19,18 @@
 
             </form>
 
+            <append></append>
+
             <div id='salmo'>
                 <titulo>Tehilim 1</titulo> 
                 <br>
                 <salmo>
                     Como é feliz aquele que não segue o conselho dos ímpios, não imita a conduta dos pecadores, nem se assenta na roda dos zombadores! Ao contrário, sua satisfação está na lei do criador, e nessa lei medita dia e noite. É como árvore plantada à beira de águas correntes: Dá fruto no tempo certo e suas folhas não murcham. Tudo o que ele faz prospera!Não é o caso dos ímpios! São como palha que o vento leva.Por isso os ímpios não resistirão no julgamento, nem os pecadores na comunidade dos justos.Pois o criador aprova o caminho dos justos, mas o caminho dos ímpios leva à destruição!
                 </salmo>
+                <br><br>
+                <center>
+                    <button type="button" class='btn btn-default' name='copy'>Copiar</button>
+                </center>
             </div>
         </div>
 
@@ -43,10 +49,31 @@
 
     let salmotitle = document.querySelector('titulo')
     let salmoler = document.querySelector('salmo')
+    let copyBtn = document.querySelector('button[name=copy]')
+    var error = false
  
     salmo.value = '1'
     salmo.ondblclick = function(){
         salmo.select()
+    }
+
+    if(!error){
+        copyBtn.style.display = 'none'
+    }else{
+        copyBtn.style.display = 'block'
+    }
+
+    copyBtn.onclick = function(){
+
+        let textarea = document.createElement('textarea')
+        textarea.value = `${salmotitle.innerText}
+${salmoler.innerText}`
+        document.querySelector('append').appendChild(textarea)
+
+        textarea.select()
+        document.execCommand('Copy')
+        textarea.style.display = 'none'
+        
     }
 
     var prmstr = window.location.search.substr(1);
@@ -68,6 +95,7 @@
            salmotitle.innerHTML = `Tehilim ${salmo.value}` 
 
            if(response.msg){
+               error = true
                 salmoler.innerHTML = 'Ocorreu um erro ao carregar, tente novamente mais tarde.'
                 return
            }
@@ -82,6 +110,7 @@
                 leitura = leitura.replace('Deus', 'YHWH').replace('Senhor', 'criador').replace('puro','limpo').replace('misericórdia', 'benevolência').replace(',]', ']').replace('"','ˮ').replace('\'','"').replace('cruz','madeiro').replace('Cruz', 'madeiro').replace('amém', 'assim seja').replace('batismo', 'imersão').replace('glória', 'grandeza').replace('vitória','conquista').replace('misericordioso','benevolente').replace('.','. ').replace('!','! ').replace('Amém','Assim seja').replace('?', '? ').replace('pausa','').replace('Pausa', '').replace('escudo protetor', 'escudo e couraça')
 
                 salmoler.innerHTML = leitura
+                salmoler.value = leitura
 
             }
 
