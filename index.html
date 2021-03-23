@@ -54,7 +54,7 @@
     formulario.onsubmit = function(e){
         e.preventDefault()
 
-        history.pushState({}, null, `${window.location.href}?salmo=${salmoNum}`);
+        history.pushState({}, null, `${window.location.href}?salmo=${salmo.value}`);
     }
 
 
