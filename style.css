@@ -156,14 +156,4 @@ button {
 .form-group{
     margin-top:28px;
     display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#salmo{
-  font-size: 28px;
-  width: 800px;
-  word-spacing: 0.3em;
-  letter-spacing: 2px;
-}
+   
