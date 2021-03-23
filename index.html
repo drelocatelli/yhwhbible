@@ -69,7 +69,9 @@
 
            salmotitle.innerHTML = `Tehilim ${salmo.value}` 
 
-           console.log(response.msg)
+           if(response.msg){
+                salmoler.innerHTML = 'Ocorreu um erro ao carregar, tente novamente mais tarde.'
+           }
 
            response = response.verses
 
