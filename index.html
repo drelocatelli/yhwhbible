@@ -50,7 +50,6 @@
     salmo.value = salmoNum
 
     function getSalmo(){
-        setTimeout(function(){
         let request = new Request(`https://www.abibliadigital.com.br/api/verses/nvi/sl/${salmo.value}`, {
            method: 'GET',
          });
@@ -80,7 +79,6 @@
 
 
          });
-        },3000)
     }
 
     if(salmoNum == ''){
