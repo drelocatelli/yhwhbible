@@ -73,6 +73,10 @@
 
            let leitura = ''
 
+           response.forEach(function(i){
+               leitura += i
+           })
+
            salmoler.innerHTML = response.msg
 
          });
