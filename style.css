@@ -3,6 +3,11 @@ body{
   background:#fdfde4;
 }
 
+a{
+  color:chartreuse;
+  text-decoration: none;
+}
+
 .form-control {
     width: 300px;
     padding: 6px 12px;
