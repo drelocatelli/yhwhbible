@@ -4,8 +4,9 @@ body{
 }
 
 a{
-  color:#66afe9;
+  color:black;
   text-decoration: none;
+  background-color: #66afe9;
 }
 
 .form-control {
