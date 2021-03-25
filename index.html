@@ -31,7 +31,8 @@
                 </salmo>
                 <br><br>
                 <center>
-                    <button type="button" class='btn btn-default' name='copy'>Copiar</button>
+                    <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>baixar app</button>
+                    <button type="button" class='btn btn-default' name='copy'>copiar salmo</button>
                 </center>
             </div>
         </div>
@@ -42,7 +43,7 @@
 
 </html>
 
-<script src='sweetalert2.all.min.js'></script>
+<script src='sweetalert2.all.min.js' type='text/javascript'></script>
 
 
 <script>
@@ -55,6 +56,13 @@
     let salmotitle = document.querySelector('titulo')
     let salmoler = document.querySelector('salmo')
     let copyBtn = document.querySelector('button[name=copy]')
+    let allBtns = document.querySelectorAll('button')
+
+    allBtns.forEach(function(btn){
+        btn.onclick = () =>{
+            window.location.href = btn.dataset.href
+        }
+    })
  
     salmo.value = '1'
     salmo.ondblclick = function(){
@@ -65,7 +73,10 @@
 
         let textarea = document.createElement('textarea')
         textarea.value = `${salmotitle.innerText}
-${salmoler.innerText}`
+${salmoler.innerText}
+────────────────────────────────────────────────────
+https://yhwhsalmos.herokuapp.com/?salmo=${salmo.value}
+`
         document.querySelector('append').appendChild(textarea)
 
         textarea.select()
@@ -74,7 +85,10 @@ ${salmoler.innerText}`
         Swal.fire({
             icon: 'success',
             title:'Copiado!',
-            showConfirmButton:true
+
+            showConfirmButton: false,
+            showDenyButton: false,
+            showCancelButton: false,
         })
         
     }
@@ -162,6 +176,15 @@ ${salmoler.innerText}`
         getSalmo()
         
 
+    }
+
+    function mobileCheck (){
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        return isMobile;
+    }
+
+    if(mobileCheck()){
+        document.querySelector('button[name=notMobile]').remove();     
     }
 
 

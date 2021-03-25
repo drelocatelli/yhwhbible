@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
 body{
   background:#fdfde4;
+  user-select: none;
 }
 
 a{
@@ -136,6 +137,7 @@ a{
 
 
 button {
+    display: inline-block!important;
     outline:none;
     appearance: auto;
     -webkit-writing-mode: horizontal-tb !important;
@@ -146,7 +148,6 @@ button {
     text-transform: none;
     text-indent: 0px;
     text-shadow: none;
-    display: inline-block;
     text-align: center;
     align-items: flex-start;
     cursor: default;
