@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style.css" type="text/css" rel="stylesheet" />
-    <link href="src/css/all.min.css" type="text/css" rel="stylesheet" />
-    <script src="src/js/all.min.js" type="text/javascript"></script>
+    <link href="escrituras_sagradas/src/css/all.min.css" type="text/css" rel="stylesheet" />
+    <script src="escrituras_sagradas/src/js/all.min.js" type="text/javascript"></script>
     <title>Escrituras Sagradas YHWH</title>
 </head>
 <body>
@@ -133,18 +133,17 @@
 
     let params = decodeURI(window.location.search.substr(1));  
 
-    // if (params == "") { 
-    //     if('params' in localStorage){
-    //         window.location.href = window.location.href+localStorage.getItem("params")
-    //     }else{
-    //         window.location.href = window.location.href+"?book=gênesis&chapter=1"
-    //     }
-    // }
+    if (params == "") { 
+        if('params' in localStorage){
+            window.location.href = window.location.href+localStorage.getItem("params")
+        }else{
+            window.location.href = window.location.href+"?book=gênesis&chapter=1"
+        }
+    }
 
-    //  // salva ultimo texto lido
-    // localStorage.setItem("params", `?${params}`);
+     // salva ultimo texto lido
+    localStorage.setItem("params", `?${params}`);
 
-    localStorage.setItem("params", "?book=gênesis&chapter=1");
 
     let bookRegex = /(?<=book\=)(?:\d%2B[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)/gm
     let chapterRegex = /(?<=chapter\=)[0-9]*/gm
@@ -156,7 +155,7 @@
     function getBibleBooks(){
 
     
-    let request = new Request('src/books.json', {
+    let request = new Request('escrituras_sagradas/src/books.json', {
         method: 'GET',
     });
 
