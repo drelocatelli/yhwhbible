@@ -5,8 +5,9 @@ body{
 }
 
 a{
-  color:white;
+  color:rgb(8, 163, 235);
   text-decoration: none;
+  font-size:20px;
   padding: 5px;
 }
 

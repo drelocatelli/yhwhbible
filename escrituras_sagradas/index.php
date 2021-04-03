@@ -139,16 +139,19 @@
 
     let params = decodeURI(window.location.search.substr(1));  
 
-    if (params == "") { 
-        if('params' in localStorage){
-            window.location.href = window.location.href+localStorage.getItem("params")
-        }else{
-            window.location.href = window.location.href+"?book=gênesis&chapter=1"
-        }
-    }
+    // if (params == "") { 
+    //     if('params' in localStorage){
+    //         window.location.href = window.location.href+localStorage.getItem("params")
+    //     }else{
+    //         window.location.href = window.location.href+"?book=gênesis&chapter=1"
+    //     }
+    // }
 
-     // salva ultimo texto lido
-    localStorage.setItem("params", `?${params}`);
+    //  // salva ultimo texto lido
+    // localStorage.setItem("params", `?${params}`);
+
+    window.location.href = window.location.href+"?book=gênesis&chapter=1"
+    localStorage.setItem("params", "?book=gênesis&chapter=1");
 
     let bookRegex = /(?<=book\=)(?:\d%2B[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)/gm
     let chapterRegex = /(?<=chapter\=)[0-9]*/gm
