@@ -71,6 +71,7 @@
             width:94%;
             font-size:1.0rem;
         }
+
        form{
         display:flex;
         flex-direction:column;
@@ -116,6 +117,25 @@
     })
 
     let params = decodeURI(window.location.search.substr(1));
+   
+    
+    // salva ultimo texto lido
+    localStorage.setItem("params", `?${params}`);
+    
+    let bookRegex = /(?<=book\=)(?:\d_[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)/gm
+    let chapterRegex = /(?<=chapter\=)[0-9]*/gm
+
+    let foundBook = (bookRegex.test(params)) ? true : false;
+    let foundChapter = (chapterRegex.test(params)) ? true : false;
+    let foundBible = (foundBook && foundChapter)
+
+    if(!foundBible) {
+        window.location.href = "?book=gênesis&chapter=1" 
+    }
+
+    let selectedBook = params.match(bookRegex)[0];
+    let selectedChapter = params.match(chapterRegex)[0];
+
     if (params == "") { 
         if(localStorage.getItem("params")){
             window.location.href = window.location.href+localStorage.getItem("params")
@@ -123,17 +143,6 @@
             window.location.href = window.location.href+"?book=gênesis&chapter=1" 
         }
     }
-    
-    // salva ultimo texto lido
-    localStorage.setItem("params", `?${params}`);
-    
-    
-    let selectedBook = params.match(/(?<=book\=)(?:\d_[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)/gm)[0];
-
-    let paramEmpty = /book\=(\d_[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)&chapter=[0-9]*/gm.test(params)
-
-    
-    selectedChapter = params.match(/(?<=chapter\=)[0-9]*/gm)[0];
 
     function getBibleBooks(){
 
