@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
 body{
   background:#fdfde4;
-  user-select: none;
+  font-family:'Kiwi Maru'!important;
 }
 
 a{
@@ -12,7 +12,7 @@ a{
 }
 
 .form-control {
-    width: 300px;
+    /* width: 300px; */
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
@@ -97,7 +97,7 @@ a{
 
 .btn {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 4px 12px;
     margin-bottom: 5px;
     
     font-size: 14px;
@@ -123,10 +123,10 @@ a{
     background-color: #00bcd4;
     border-color: #2196f3;
     position: relative;
-    top: -4px;
+    top: -1px;
     box-sizing: border-box;
     font-size: 22px;
-    height: 47px;
+    height: 43px;
 }
 
 .btn-default:hover {
@@ -173,7 +173,7 @@ button {
 #salmo{
   font-size: 20px;
   padding-top:60px;
-  font-family:'Kiwi Maru';
+  user-select: none;
   width: 800px;  
   word-spacing: 0.1em;
   letter-spacing: 1px;

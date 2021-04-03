@@ -32,7 +32,7 @@
                 <br><br>
                 <center>
                     <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>baixar app</button>
-                    <button type='button' data-href='https://escrituras-sagradas.herokuapp.com/' class='btn btn-default'>escrituras sagradas</button>
+                    <button type='button' data-href='escrituras_sagradas/index.php' class='btn btn-default'>escrituras sagradas</button>
                     <button type="button" class='btn btn-default' name='copy'>copiar salmo</button>
                 </center>
             </div>
@@ -95,7 +95,7 @@ https://yhwhsalmos.herokuapp.com/?salmo=${salmo.value}
     }
 
     var prmstr = window.location.search.substr(1);
-    salmoNum = prmstr.replace('salmo=','')
+    salmoNum = prmstr.replaceAll('salmo=','')
     salmo.value = salmoNum
 
     function getSalmo(){
@@ -129,7 +129,7 @@ https://yhwhsalmos.herokuapp.com/?salmo=${salmo.value}
             for(let i = 0; i <= response.length; i++){
                 leitura += ' '+response[i].text
 
-                leitura = leitura.replace('Deus', 'YHWH').replace('Senhor', 'criador').replace('puro','limpo').replace('misericórdia', 'benevolência').replace(',]', ']').replace('"','ˮ').replace('\'','"').replace('cruz','madeiro').replace('Cruz', 'madeiro').replace('amém', 'assim seja').replace('batismo', 'imersão').replace('glória', 'grandeza').replace('vitória','conquista').replace('misericordioso','benevolente').replace('.','. ').replace('!','! ').replace('Amém','Assim seja').replace('?', '? ').replace('pausa','').replace('Pausa', '').replace('broquel', 'couraça').replace('Senhor', 'YHWH').replace("senhor", "criador").replace('todo-poderoso','onipotente').replace('Todo-poderoso','onipotente').replace('Todo-Poderoso','onipotente').replace('laço do passarinho', 'laço do passarinheiro').replace('Judá','Yauda').replace('judá', 'yauda')
+                leitura = leitura.replaceAll('Deus', 'YHWH').replaceAll('Senhor', 'criador').replaceAll('puro','limpo').replaceAll('misericórdia', 'benevolência').replaceAll(',]', ']').replaceAll('"','ˮ').replaceAll('\'','"').replaceAll('cruz','madeiro').replaceAll('Cruz', 'madeiro').replaceAll('amém', 'assim seja').replaceAll('batismo', 'imersão').replaceAll('glória', 'grandeza').replaceAll('vitória','conquista').replaceAll('misericordioso','benevolente').replaceAll('.','. ').replaceAll('!','! ').replaceAll('Amém','Assim seja').replaceAll('?', '? ').replaceAll('pausa','').replaceAll('Pausa', '').replaceAll('broquel', 'couraça').replaceAll('Senhor', 'YHWH').replaceAll("senhor", "criador").replaceAll('todo-poderoso','onipotente').replaceAll('Todo-poderoso','onipotente').replaceAll('Todo-Poderoso','onipotente').replaceAll('laço do passarinho', 'laço do passarinheiro').replaceAll('Judá','Yauda').replaceAll('judá', 'yauda')
 
                 salmoler.innerHTML = leitura
                 salmoler.value = leitura
