@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style.css" type="text/css" rel="stylesheet" />
     <link href="src/css/all.min.css" type="text/css" rel="stylesheet" />
+    <script src="src/js/all.min.js" type="text/javascript"></script>
     <title>Escrituras Sagradas YHWH</title>
 </head>
 <body>
@@ -103,6 +104,7 @@
       }
     }
 </style>
+
 
 <script>
 
