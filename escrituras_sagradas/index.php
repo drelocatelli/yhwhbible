@@ -24,7 +24,7 @@
         </div>
 
         <br>
-        <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>aplicativo celular</button>
+        <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>obter aplicativo de celular</button>
         <button class="btn btn-default" data-href="../index.html">Tehilim</button>
         <br><br>
     </div>
@@ -41,6 +41,7 @@
     }
 
     #center{
+        margin-top:90px;
         display:flex;
         text-align:justify;
         align-items:center;
