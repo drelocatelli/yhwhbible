@@ -169,12 +169,9 @@
 
 
        
-            selectedBook = selectedBook.replace('+', ' ')
+            let bookTitle = selectedBook.replace('+', ' ')
 
-            console.log(selectedBook)
-                
-                
-            info.innerHTML = `<h1>${selectedBook} ${selectedChapter}</h1>`
+            info.innerHTML = `<h1>${bookTitle} ${selectedChapter}</h1>`
 
             response.forEach(function(item){ 
          
