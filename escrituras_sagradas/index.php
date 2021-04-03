@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style.css" type="text/css" rel="stylesheet" />
-    <!-- <link href="src/css/all.min.css" type="text/css" rel="stylesheet" /> -->
-      <!-- jquery -->
-      <script src="src/js/jquery-3.3.1.min.js" type="text/javascript"></script>
-    
-    <!-- scroll suave -->
-    <script src="js/scrollSuave.js" type="text/javascript"></script>
+    <link href="src/css/all.min.css" type="text/css" rel="stylesheet" />
     <title>Escrituras Sagradas YHWH</title>
 </head>
 <body>
@@ -32,7 +27,7 @@
             </div>
 
             <br>
-            <a href="#top" class="btn btn-default">TOPO</a>
+            <a href="#top" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>
             <br><br>
             <a href="https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk">obter aplicativo de celular</a>
         </div> 
@@ -109,7 +104,13 @@
     }
 </style>
 
+<!-- jquery -->
+<script src="src/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    
+<!-- scroll suave -->
+<script src="src/js/scrollSuave.js" type="text/javascript"></script>
 
+<script src="src/js/all.min.js" type="text/javascript"></script>
 
 <script>
 
