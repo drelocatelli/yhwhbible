@@ -25,7 +25,8 @@
 
         <br>
         <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>obter aplicativo de celular</button>
-        <button class="btn btn-default" data-href="../index.html">Tehilim</button>
+        <button class="btn btn-default" data-href="#">Topo</button>
+
     </div>
     
 </body>
@@ -203,7 +204,7 @@
 
                             chaptersEl.value = chapter_i
                             chaptersEl.dataset.number = chapter_i
-                            chaptersEl.innerHTML = `Cap - ${chapter_i}`
+                            chaptersEl.innerHTML = `${chapter_i}`
 
                             if(chaptersEl.value == selectedChapter){
                                 chaptersEl.selected = true;
@@ -301,10 +302,18 @@
             submitBtn.style.display = 'block';
         }
     }
+
+    function nextPrev() {
+        console.log(next)
+
+
+    }
+
     
     window.onload = function(){
         getBibleBooks();
         changeBook();
+        nextPrev();
     }
     
 
