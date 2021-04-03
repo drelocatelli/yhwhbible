@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style.css" type="text/css" rel="stylesheet" />
     <!-- <link href="src/css/all.min.css" type="text/css" rel="stylesheet" /> -->
+      <!-- jquery -->
+      <script src="src/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    
+    <!-- scroll suave -->
+    <script src="js/scrollSuave.js" type="text/javascript"></script>
     <title>Escrituras Sagradas YHWH</title>
 </head>
 <body>
@@ -27,7 +32,7 @@
             </div>
 
             <br>
-            <button class="btn btn-default" data-href="#">Topo</button>
+            <a href="#top" class="btn btn-default">TOPO</a>
             <br><br>
             <a href="https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk">obter aplicativo de celular</a>
         </div> 
