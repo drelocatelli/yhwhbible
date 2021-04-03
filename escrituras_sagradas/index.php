@@ -146,7 +146,7 @@
 
     function getBibleBooks(){
 
-
+    
     let request = new Request('https://www.abibliadigital.com.br/api/books', {
         method: 'GET',
     });
@@ -164,13 +164,13 @@
         }else{
 
             // tudo certo
-
+            
 
             response.forEach(function(item){   
                 
                 let option = document.createElement('option'); 
                 item['name'] = item['name'].trim();
-                option.value = item['name'].toLowerCase().replaceAll(' ','_').replaceAll('º','');
+                option.value = item['name'].toLowerCase().replaceAll(' ','_').replaceAll('º','').replaceAll('ª','');
                 option.innerHTML = `${item['name']} (${item['chapters']})`;
 
                 option.dataset.chapters = item['chapters'];
