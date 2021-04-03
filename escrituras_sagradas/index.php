@@ -104,14 +104,6 @@
     }
 </style>
 
-<!-- jquery -->
-<script src="src/js/jquery-3.3.1.min.js" type="text/javascript"></script>
-    
-<!-- scroll suave -->
-<script src="src/js/scrollSuave.js" type="text/javascript"></script>
-
-<script src="src/js/all.min.js" type="text/javascript"></script>
-
 <script>
 
     var text = document.querySelector('div#text');
