@@ -26,7 +26,6 @@
         <br>
         <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>obter aplicativo de celular</button>
         <button class="btn btn-default" data-href="../index.html">Tehilim</button>
-        <br><br>
     </div>
     
 </body>
@@ -41,6 +40,7 @@
     }
 
     #center{
+        font-family:'Kiwi Maru',sans-serif;
         margin-top:90px;
         display:flex;
         text-align:justify;
@@ -59,11 +59,36 @@
         padding: 19px;
     }
 
-    #enviar{visibility:hidden!important;}
+    #enviar{display:none!important;}
 
     sub{font-weight:bold; font-size:0.7rem; color:#aaa;}
 
     select{cursor:pointer;}
+
+    @media screen and (max-width:800px){
+
+        #center #text{
+            width:94%;
+            font-size:1.0rem;
+        }
+       form{
+        display:flex;
+        flex-direction:column;
+        margin:0 auto;
+        align-items:center;
+       }
+
+        
+      .form-control, select{
+        width:270px;
+      }
+
+      form .btn-default{
+        margin-top:5px;
+        padding: 3px;
+        font-size: 15px;
+      }
+    }
 </style>
 
 
@@ -264,7 +289,7 @@
                 submitBtn.click();            
             }
         }catch(e){
-            submitBtn.style.visibility = 'visible';
+            submitBtn.style.display = 'block';
         }
     }
     
