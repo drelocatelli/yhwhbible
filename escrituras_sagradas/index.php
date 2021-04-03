@@ -25,11 +25,14 @@
 
             <div id="text">
             </div>
+
+            <br>
+            <button class="btn btn-default" data-href="#">Topo</button>
+            <br><br>
+            <a href="https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk">obter aplicativo de celular</a>
         </div> 
 
-        <br>
-        <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>obter aplicativo de celular</button>
-        <button class="btn btn-default" data-href="#">Topo</button>
+        
 
     </div>
     
@@ -122,7 +125,9 @@
 
     allBtns.forEach(function(btn){
         btn.onclick = () =>{
-            window.location.href = btn.dataset.href
+            if(btn.dataset.href){
+                window.location.href = btn.dataset.href
+            }
         }
     })
 
