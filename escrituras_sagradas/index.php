@@ -22,6 +22,11 @@
         <div id="text">
             ...
         </div>
+
+        <br>
+        <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>aplicativo celular</button>
+        <button class="btn btn-default" data-href="../index.html">Tehilim</button>
+        <br><br>
     </div>
     
 </body>
@@ -55,7 +60,7 @@
 
     #enviar{visibility:hidden!important;}
 
-    sub{font-weight:bold; font-size:0.7rem; color:red;}
+    sub{font-weight:bold; font-size:0.7rem; color:#aaa;}
 
     select{cursor:pointer;}
 </style>
@@ -76,6 +81,13 @@
     let prev = document.querySelector('prev');
     let next = document.querySelector('next');
 
+    let allBtns = document.querySelectorAll('button')
+
+    allBtns.forEach(function(btn){
+        btn.onclick = () =>{
+            window.location.href = btn.dataset.href
+        }
+    })
 
     let params = decodeURI(window.location.search.substr(1));
     if (params == "") { 
