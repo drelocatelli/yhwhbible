@@ -150,7 +150,6 @@
     //  // salva ultimo texto lido
     // localStorage.setItem("params", `?${params}`);
 
-    window.location.href = window.location.href+"?book=gênesis&chapter=1"
     localStorage.setItem("params", "?book=gênesis&chapter=1");
 
     let bookRegex = /(?<=book\=)(?:\d%2B[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)/gm
