@@ -19,13 +19,9 @@
             <button class="btn btn-default" type="submit" id="enviar">abrir</button>
         </form>
 
-        <div id="content">
-            <div id="info">
-                </div>
-
-            <div id="text">
-            </div>
-        </div> 
+        <div id="text">
+            ...
+        </div>
 
         <br>
         <button type="button" class='btn btn-default' name='notMobile' data-href='https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk'>obter aplicativo de celular</button>
@@ -53,7 +49,7 @@
         flex-direction:column;
     }
 
-    #center #content{
+    #center #text{
         margin-top:5px;
         margin-bottom:40px;
         word-spacing: 0.1em;
@@ -64,19 +60,15 @@
         padding: 19px;
     }
 
-    #content #info h1{
-        text-transform:capitalize!important;
-    }
-
     #enviar{display:none!important;}
 
-    sub, sub a{font-weight:bold; font-size:0.7rem; color:#aaa;}
+    sub{font-weight:bold; font-size:0.7rem; color:#aaa;}
 
     select{cursor:pointer;}
 
     @media screen and (max-width:800px){
 
-        #center #content{
+        #center #text{
             width:94%;
             font-size:1.0rem;
         }
@@ -106,7 +98,6 @@
 <script>
 
     var text = document.querySelector('div#text');
-    var info = document.querySelector('div#info');
     let form = document.querySelector('form');
     let submitBtn = form.querySelector('button[type=submit]');
     let select = form.querySelector('select[name=book]');
@@ -139,26 +130,26 @@
      // salva ultimo texto lido
     localStorage.setItem("params", `?${params}`);
 
-    let bookRegex = /(?<=book\=)(?:\d%2B[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)/gm
+    let bookRegex = /(?<=book\=)(?:\d_[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)/gm
     let chapterRegex = /(?<=chapter\=)[0-9]*/gm
 
-    let selectedBook = params.match(bookRegex)[0].replaceAll('%2B','+');
-    let selectedChapter = params.match(chapterRegex)[0].replaceAll('%2B','+');
+    let selectedBook = params.match(bookRegex)[0];
+    let selectedChapter = params.match(chapterRegex)[0];
 
 
     function getBibleBooks(){
 
     
-    let request = new Request('src/books.json', {
+    let request = new Request('https://www.abibliadigital.com.br/api/books', {
         method: 'GET',
     });
 
     fetch(request).then(function(response) { return response.text() }).then(function(response){
         response = JSON.parse(response)
-        let option = document.createElement('option');
-
+        
         
         if(response['msg']){
+            let option = document.createElement('option');
             select.appendChild(option);
             option.value = "Erro";
             option.innerText = "erro";
@@ -166,22 +157,13 @@
         }else{
 
             // tudo certo
+            
 
-
-       
-            selectedBook = selectedBook.replace('+', ' ')
-
-            console.log(selectedBook)
-                
-                
-            info.innerHTML = `<h1>${selectedBook} ${selectedChapter}</h1>`
-
-            response.forEach(function(item){ 
-         
+            response.forEach(function(item){   
                 
                 let option = document.createElement('option'); 
                 item['name'] = item['name'].trim();
-                option.value = item['name'].toLowerCase().replaceAll('º','+').replaceAll('ª','+').replaceAll('+ ','+').replaceAll('lamentações de jeremias', 'lamentações');
+                option.value = item['name'].toLowerCase().replaceAll(' ','_').replaceAll('º','').replaceAll('ª','');
                 option.innerHTML = `${item['name']} (${item['chapters']})`;
 
                 option.dataset.chapters = item['chapters'];
@@ -196,6 +178,7 @@
                 let option = options[i];
 
                 // selecionado o livro do parametro
+
                 if(option.value == selectedBook){
                     option.selected = true;
                      // mostra quantia de capitulos
@@ -257,17 +240,19 @@
         book = ''
         books.forEach(function(book){
             if(book.selected == true) {
-                let url = `https://bible-api.com/${book.value}+${chapter}?translation=almeida`;
+                abbrev = book.dataset.abbrev
 
-                let request = new Request(`${url}`, {
+                let request = new Request(`https://www.abibliadigital.com.br/api/verses/ra/${abbrev}/${chapter}`, {
                     method: 'GET',
                 });
 
                 fetch(request).then(function(response) { return response.text() }).then(function(response){
                     response = JSON.parse(response)
 
-                 
+  
                     let verses = response['verses']
+                    text.innerHTML = ""
+                    text.innerHTML += `<h1>${response['book']['name']} ${response['chapter']['number']}</h1><h3>| Livro: ${response['book']['group']}<br>| Autor: ${response['book']['author']}<br>| ${response['chapter']['verses']} versículos</h3>`
                     let i = 0;
 
                     verses.forEach(function(verse){
@@ -275,13 +260,8 @@
                         verse['text'] = verse['text'].replaceAll('Deus', 'Yauh (יהוה)').replaceAll('deus', 'eterno').replaceAll('Senhor', 'criador').replaceAll('puro','limpo').replaceAll('misericórdia', 'benevolência').replaceAll(',]', ']').replaceAll('"','ˮ').replaceAll('\'','"').replaceAll('cruz','madeiro').replaceAll('Cruz', 'madeiro').replaceAll('amém', 'assim seja').replaceAll('batismo', 'imersão').replaceAll('glória', 'grandeza').replaceAll('vitória','conquista').replaceAll('misericordioso','benevolente').replaceAll('.','. ').replaceAll('!','! ').replaceAll('Amém','Assim seja').replaceAll('?', '? ').replaceAll('pausa','').replaceAll('Pausa', '').replaceAll('broquel', 'couraça').replaceAll('Senhor', 'eterno').replaceAll("senhor", "criador").replaceAll('todo-poderoso','onipotente').replaceAll('Todo-poderoso','onipotente').replaceAll('Todo-Poderoso','onipotente').replaceAll('laço do passarinho', 'laço do passarinheiro').replaceAll('Judá','Yauda').replaceAll('judá', 'yauda').replaceAll('David','Davi').replaceAll('Jesus','Yausha').replaceAll('JESUS','YAUSHA').replaceAll('Jesus Cristo','Yausha').replaceAll('Cristo','').replaceAll('EMANUEL','YAUSHA')
 
                         i++;
-                        text.innerHTML += `<br><sub><a href="#versiculo_${i}" id="versiculo_${i}">${i}</a></sub>${verse['text']}`
-                        
+                        text.innerHTML += `<br><sub>${i}</sub>${verse['text']}`
                     })
-
-                    let sub = document.querySelectorAll("sub")
-                    info.innerHTML += `<h3>| ${sub.length} versículos</h3>`
-                    
 
                 })
 
