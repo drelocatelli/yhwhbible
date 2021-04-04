@@ -38,8 +38,8 @@
 
             <div class="buttons">
                 <div class="controls">
-                    <a href="javascript:void(0);" class='btn btn-default' name='anterior'>ANTERIOR</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#top" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>&nbsp;&nbsp;&nbsp;
+                    <a href="javascript:void(0);" class='btn btn-default' name='anterior'>ANTERIOR</a>
+                    <a href="#top" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>
                     <a href="javascript:void(0);" class='btn btn-default' name='proximo'>PRÓXIMO</a>
                 </div>
                 <div class="copy">
@@ -122,6 +122,12 @@
     }
 
     @media screen and (max-width:800px){
+
+        .btn-default{
+            font-size: 14px;
+            height: auto;
+            padding: 2px 3px;
+        }
 
         #center #content{
             width:94%;
