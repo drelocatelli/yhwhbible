@@ -7,6 +7,8 @@
     <link href="style.css" type="text/css" rel="stylesheet" />
     <link href="src/css/all.min.css" type="text/css" rel="stylesheet" />
     <script src="src/js/all.min.js" type="text/javascript"></script>
+    <link href="sweetalert2.min.css" type="text/css"/>
+    <script src="sweetalert2.all.min.js"></script>
     <title>Escrituras Sagradas YHWH</title>
 </head>
 <body>
@@ -31,7 +33,7 @@
 
             <br>
             <a href="#top" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>
-            <a href="javascript:void(0);" class='btn btn-default'>COPIAR ESCRITURAS</a>
+            <a href="javascript:void(0);" class='btn btn-default' name='copy'>COPIAR ESCRITURAS</a>
             <br><br>
             <a href="https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk">obter aplicativo de celular</a>
         </div> 
@@ -61,6 +63,7 @@
     }
 
     #center #content{
+        user-select:none;
         margin-top:5px;
         margin-bottom:40px;
         word-spacing: 0.1em;
@@ -77,9 +80,20 @@
 
     #enviar{display:none!important;}
 
-    sub, sub a{font-weight:bold; font-size:0.7rem; color:#aaa;}
+    sub, sub a{font-weight:bold; font-size:0.7rem; color:#aaa; word-spacing:-5px;}
 
     select{cursor:pointer;}
+
+    textarea[name=escrituras]{
+        width: 0;
+        height:0;
+        border:0;
+        outline:none;
+        background:transparent;
+        position:absolute;
+        top:0;
+        color:transparent;
+    }
 
     @media screen and (max-width:800px){
 
@@ -281,16 +295,17 @@
                         verse['text'] = verse['text'].replaceAll('Deus', 'Yauh (יהוה)').replaceAll('deus', 'eterno').replaceAll('Senhor', 'altíssimo').replaceAll('puro','limpo').replaceAll('misericórdia', 'compaixão').replaceAll(',]', ']').replaceAll('"','ˮ').replaceAll('\'','"').replaceAll('cruz','madeiro').replaceAll('Cruz', 'madeiro').replaceAll('amém', 'assim seja').replaceAll('batismo', 'imersão').replaceAll('vitória','conquista').replaceAll('misericordioso','benevolente').replaceAll('.','. ').replaceAll('!','! ').replaceAll('Amém','Assim seja').replaceAll('?', '? ').replaceAll('pausa','').replaceAll('Pausa', '').replaceAll('broquel', 'couraça').replaceAll("senhor", "criador").replaceAll('todo-poderoso','onipotente').replaceAll('Todo-poderoso','onipotente').replaceAll('Todo-Poderoso','onipotente').replaceAll('laço do passarinho', 'laço do passarinheiro').replaceAll('Judá','Yaudah').replaceAll('judá', 'yaudah').replaceAll('David','Davi').replaceAll('Jesus','Yausha (יהושע)').replaceAll('JESUS','YAUSHA (יהושע)').replaceAll('Jesus Cristo','Yausha (יהושע)').replaceAll('Cristo','Yausha (יהושע)').replaceAll('EMANUEL','YAUSHA (יהושע)').replaceAll('mui','muito').replaceAll('muitoto','muito').replaceAll('muimuito','muito').replaceAll(/(\bgraça\b|\bgraças\b)/ig, 'benevolência').replaceAll('batismo','imersão').replaceAll(/(\bglória\b|\bglórias\b)/ig,'grandeza').replaceAll(/vitória/ig,'conquista').replaceAll('justiça','honra').replaceAll(/libertação/ig,'salvação').replaceAll(/luz/ig,'claridade').replaceAll(/dia/gi, 'tempo').replaceAll(/noite/gi,'fim de tarde').replaceAll(/pai eterno/gi,'YAUH (יהוה)').replaceAll('ç rei', 'YAUH (יהוה)').replaceAll(/israel/gi,'Yaushalaim (Israel)')
 
                         i++;
-                        text.innerHTML += `<br><sub><a href="#versiculo_${i}" id="versiculo_${i}">${i}</a></sub>${verse['text']}`
+                        text.innerHTML += `<sub>${i}</sub> ${verse['text']}<br>`
                         
                     })
 
                     let sub = document.querySelectorAll("sub")
                     info.innerHTML += `<h3>| ${sub.length} versículos</h3>`
                     
+                    copyEscrituras();
 
                 })
-                // copyEscrituras();
+                
             }
         });
 
@@ -324,7 +339,23 @@
 
     function copyEscrituras() {
         let textareaEl = document.querySelector('textarea[name=escrituras]');
-        textareaEl.value = text.innerText
+        textareaEl.value = `${info.innerText}\n`
+        textareaEl.value += text.innerText
+        
+        let copyBtn = document.querySelector('a[name=copy]')
+        copyBtn.onclick = function() {
+            textareaEl.select();
+            document.execCommand('copy');
+
+            Swal.fire({
+                icon: 'success',
+                title:'Copiado!',
+
+                showConfirmButton: false,
+                showDenyButton: false,
+                showCancelButton: false,
+            })
+        }
     }
     
     window.onload = function(){
