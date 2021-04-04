@@ -32,8 +32,10 @@
             </div>
 
             <br>
+            <a href="javascript:void(0);" class='btn btn-default' name='copy'>COPIAR <i class="fas fa-copy"></i></a>
+            <a href="javascript:void(0);" class='btn btn-default' name='anterior'>ANTERIOR</a>
             <a href="#top" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>
-            <a href="javascript:void(0);" class='btn btn-default' name='copy'>COPIAR ESCRITURAS</a>
+            <a href="javascript:void(0);" class='btn btn-default' name='proximo'>PRÓXIMO</a>
             <br><br>
             <a href="https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk">obter aplicativo de celular</a>
         </div> 
@@ -304,6 +306,7 @@
                     info.innerHTML += `<h3>| ${sub.length} versículos</h3>`
                     
                     copyEscrituras();
+                    nextPage();
 
                 })
                 
@@ -358,6 +361,57 @@
                 showCancelButton: false,
             })
 
+        }
+    }
+
+    function nextPage(){
+        let nextBtn = document.querySelector('a[name=proximo]');
+        let prevBtn = document.querySelector('a[name=anterior]');
+
+        let nextSelect = document.querySelector("#center > form > next > select").childNodes
+
+        // botao anterior
+        prevBtn.onclick = function(){
+            nextSelect.forEach(function(option){     
+                option.value = parseInt(option.value);
+                if(option.selected == true) {
+                    if(option.value > 1){
+                        option.value = parseInt(option.value) - 1;
+                        submitBtn.click();  
+                    }else{
+                        // muda livro
+                        select.childNodes.forEach(function(item){
+                            if(item.selected == true){
+                                item.value = item.previousElementSibling.value;
+                                option.value = item.previousElementSibling.dataset.chapters
+                                submitBtn.click();
+                            }
+                        });
+                    }
+                }
+            })
+        }
+
+        // botao proximo
+        nextBtn.onclick = function(){
+            nextSelect.forEach(function(option){     
+                option.value = parseInt(option.value);
+                if(option.selected == true) {
+                    if(option.value < nextSelect.length){
+                        option.value = parseInt(option.value) + 1;
+                        submitBtn.click();  
+                    }else{
+                        // muda livro
+                        select.childNodes.forEach(function(item){
+                            if(item.selected == true){
+                                option.value = 1;
+                                item.value = item.nextElementSibling.value;
+                                submitBtn.click();
+                            }
+                        });
+                    }
+                }
+            })
         }
     }
     
