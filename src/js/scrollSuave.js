@@ -12,7 +12,7 @@ $(document).ready(function(){
         });
     });
     
-     $('a[href^="#"]').on('click',function (e) {
+     $('a[href^="#top"]').on('click',function (e) {
         e.preventDefault();
 
         var target = this.hash,
