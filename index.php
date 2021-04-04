@@ -63,7 +63,7 @@
     }
 
     #center #content{
-        user-select:none;
+     
         margin-top:5px;
         margin-bottom:40px;
         word-spacing: 0.1em;
@@ -78,7 +78,7 @@
         text-transform:capitalize!important;
     }
 
-    #enviar{display:none!important;}
+    #enviar{display:none;}
 
     sub, sub a{font-weight:bold; font-size:0.7rem; color:#aaa; word-spacing:-5px;}
 
