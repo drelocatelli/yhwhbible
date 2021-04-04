@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $('a[href^="#main"]').on('click',function (e) {
         e.preventDefault();
@@ -13,7 +12,7 @@ $(document).ready(function(){
         });
     });
     
-     $('a[href^="#top"]').on('click',function (e) {
+     $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
 
         var target = this.hash,

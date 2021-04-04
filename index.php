@@ -7,6 +7,9 @@
     <link href="style.css" type="text/css" rel="stylesheet" />
     <link href="src/css/all.min.css" type="text/css" rel="stylesheet" />
     <script src="src/js/all.min.js" type="text/javascript"></script>
+    <script src="src/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="src/js/scrollSuave.js" type="text/javascript"></script>
+
     <link href="sweetalert2.min.css" type="text/css"/>
     <script src="sweetalert2.all.min.js"></script>
     <title>Escrituras Sagradas YHWH</title>
@@ -32,10 +35,17 @@
             </div>
 
             <br>
-            <a href="javascript:void(0);" class='btn btn-default' name='copy'>COPIAR <i class="fas fa-copy"></i></a>
-            <a href="javascript:void(0);" class='btn btn-default' name='anterior'>ANTERIOR</a>
-            <a href="#top" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>
-            <a href="javascript:void(0);" class='btn btn-default' name='proximo'>PRÓXIMO</a>
+
+            <div class="buttons">
+                <div class="controls">
+                    <a href="javascript:void(0);" class='btn btn-default' name='anterior'>ANTERIOR</a>&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>&nbsp;&nbsp;&nbsp;
+                    <a href="javascript:void(0);" class='btn btn-default' name='proximo'>PRÓXIMO</a>
+                </div>
+                <div class="copy">
+                    <a href="javascript:void(0);" class='btn btn-default' name='copy'>COPIAR <i class="fas fa-copy"></i></a>
+                </div>
+            </div>
             <br><br>
             <a href="https://andressa-aplicativos.herokuapp.com/apps/escrituras_sagradas.apk">obter aplicativo de celular</a>
         </div> 
@@ -64,6 +74,12 @@
         flex-direction:column;
     }
 
+    .buttons{
+        display: flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+
     #center #content{
      
         margin-top:5px;
@@ -82,7 +98,14 @@
 
     #enviar{display:none!important;}
 
-    sub, sub a{font-weight:bold; font-size:0.7rem; color:#aaa; word-spacing:-5px;}
+    sub, sub a{    
+        font-weight: bold;
+        font-size: 0.7rem;
+        color: #aaa;
+        word-spacing: -5px;
+        position: relative;
+        left: 5px;
+    }
 
     select{cursor:pointer;}
 
