@@ -39,7 +39,7 @@
             <div class="buttons">
                 <div class="controls">
                     <a href="javascript:void(0);" class='btn btn-default' name='anterior'>ANTERIOR</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>&nbsp;&nbsp;&nbsp;
+                    <a href="#topo" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>&nbsp;&nbsp;&nbsp;
                     <a href="javascript:void(0);" class='btn btn-default' name='proximo'>PRÓXIMO</a>
                 </div>
                 <div class="copy">
