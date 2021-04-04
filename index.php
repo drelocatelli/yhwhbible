@@ -16,6 +16,8 @@
 </head>
 <body>
 
+    <span id="top"></span>
+
     <div id="center">
         <form method="get">
             <prev></prev>
