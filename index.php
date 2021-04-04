@@ -78,7 +78,7 @@
         text-transform:capitalize!important;
     }
 
-    #enviar{display:none;}
+    #enviar{display:none!important;}
 
     sub, sub a{font-weight:bold; font-size:0.7rem; color:#aaa; word-spacing:-5px;}
 
