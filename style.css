@@ -97,10 +97,10 @@ a{
 
   
 .btn {
+  font-family:sans-serif!important;
     display: inline-block;
     padding: 4px 12px;
     margin-bottom: 5px;
-    
     font-size: 14px;
     font-weight: 400;
     line-height: 1.42857143;
