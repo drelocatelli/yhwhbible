@@ -85,6 +85,7 @@
     select{cursor:pointer;}
 
     textarea[name=escrituras]{
+        display:none;
         width: 0;
         height:0;
         border:0;
@@ -339,6 +340,7 @@
 
     function copyEscrituras() {
         let textareaEl = document.querySelector('textarea[name=escrituras]');
+        textareaEl.style.display = 'block';
         textareaEl.value = `${info.innerText}\n`
         textareaEl.value += text.innerText
         
@@ -346,7 +348,7 @@
         copyBtn.onclick = function() {
             textareaEl.select();
             document.execCommand('copy');
-
+            textareaEl.style.display = 'none';
             Swal.fire({
                 icon: 'success',
                 title:'Copiado!',
@@ -355,6 +357,7 @@
                 showDenyButton: false,
                 showCancelButton: false,
             })
+
         }
     }
     
