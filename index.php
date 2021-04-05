@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <span id="top"></span>
+    <span id="top" style="position:absolute; top:0;"></span>
 
     <div id="center">
         <form method="get">
