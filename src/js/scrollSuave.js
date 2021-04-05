@@ -6,8 +6,8 @@ $(document).ready(function(){
         $target = $(target);
 
         $('html, body').stop().animate({
-            'scrollBottom': $target.offset().top
-        }, 900, 'swing', function () {
+            'scrollTop': $target.offset().top
+        }, 2300, 'swing', function () {
             window.location.hash = target;
         });
     });
