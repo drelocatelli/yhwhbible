@@ -31,7 +31,8 @@
 
         <div id="content">
         <div class="button">
-            <a href="#bottom" class='btn btn-default'>DESCER <i class="fas fa-angle-double-down"></i></a>
+            <a href="#bottom" class='btn btn-default'>MODO LEITURA <i class="fas fa-align-justify"></i></a>&nbsp;&nbsp;
+            <a href="#bottom2" class='btn btn-default'>DESCER <i class="fas fa-angle-double-down"></i></a>
         </div>
             <div id="info">
                 </div>
@@ -59,7 +60,7 @@
 
     </div>
 
-    <span id="bottom"></span>
+    <span id="bottom"></span><span id="bottom2"></span>
 
     
 </body>

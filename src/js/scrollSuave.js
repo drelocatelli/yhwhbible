@@ -7,6 +7,19 @@ $(document).ready(function(){
 
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top
+        }, 250000, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
+
+    $('a[href^="#bottom2"]').on('click',function (e) {
+        e.preventDefault();
+
+        var target = this.hash,
+        $target = $(target);
+
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
         }, 2300, 'swing', function () {
             window.location.hash = target;
         });
