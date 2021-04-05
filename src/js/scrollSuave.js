@@ -20,7 +20,7 @@ $(document).ready(function(){
 
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top
-        }, 1500, 'swing', function () {
+        }, 1900, 'swing', function () {
             window.location.hash = target;
         });
     });
