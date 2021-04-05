@@ -63,8 +63,13 @@
     body{font-size:62.5%;}
 
     h3 {
+        margin-top:3px;
         margin-bottom: -3px;
         padding: 0;
+    }
+
+    h3:last-child{
+        margin-bottom:15px;
     }
 
     #center{
@@ -224,11 +229,8 @@
 
             // tudo certo
 
-
-       
             let bookTitle = selectedBook.replace('+', ' ')
 
-            info.innerHTML = `<h1>${bookTitle} ${selectedChapter}</h1>`
 
             response.forEach(function(item){ 
          
@@ -236,12 +238,18 @@
                 let option = document.createElement('option'); 
                 item['name'] = item['name'].trim();
                 option.value = item['name'].toLowerCase().replaceAll('º','+').replaceAll('ª','+').replaceAll('+ ','+').replaceAll('lamentações de jeremias', 'lamentações');
+
                 option.innerHTML = `${item['name']} (${item['chapters']})`;
 
+                option.dataset.author = item['author'];
+                option.dataset.group = item['group'];
                 option.dataset.chapters = item['chapters'];
                 option.dataset.abbrev = item['abbrev']['pt']
                 
                 select.appendChild(option)
+
+                info.innerHTML = `<h1>${bookTitle} ${selectedChapter}</h1><h3>| Livro: ${item['group']}</h3><h3>| Autor: ${item['author']}</h3>`
+
 
             });
 
