@@ -207,6 +207,8 @@
     let selectedBook = params.match(bookRegex)[0].replaceAll('muitotas','muitas').replaceAll('%2B','+');
     let selectedChapter = params.match(chapterRegex)[0].replaceAll('%2B','+');
 
+    let bookTitle = selectedBook.replace('+', ' ')
+
 
     function getBibleBooks(){
 
@@ -229,11 +231,8 @@
 
             // tudo certo
 
-            let bookTitle = selectedBook.replace('+', ' ')
-
-            console.dir(select)
-
-            // info.innerHTML = `<h1>${bookTitle} ${selectedChapter}</h1><h3>| Livro: ${item['group']}</h3><h3>| Autor: ${item['author']}</h3>`
+            
+        
 
             response.forEach(function(item){ 
          
@@ -251,14 +250,13 @@
                 
                 select.appendChild(option)
 
-                
-
 
             });
 
 
             for(let i = 0; i <= options.length; i++){
                 let option = options[i];
+
 
                 // selecionado o livro do parametro
                 if(option.value == selectedBook){
@@ -308,6 +306,7 @@
                 }
 
             }
+             
 
 
         } // tudo certo
@@ -318,10 +317,14 @@
 
     function getBibleText(chapter, quantity) {
         let books = document.querySelectorAll('select[name=book] option')
+        
 
         book = ''
         books.forEach(function(book){
             if(book.selected == true) {
+                console.dir(book.dataset)
+                info.innerHTML = `<h1>${bookTitle} ${selectedChapter}</h1><h3>| Livro: ${book.dataset.group}</h3><h3>| Autor: ${book.dataset.author}</h3>`
+
                 let url = `https://bible-api.com/${book.value}+${chapter}?translation=almeida`;
 
                 let request = new Request(`${url}`, {
