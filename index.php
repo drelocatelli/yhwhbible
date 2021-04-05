@@ -252,7 +252,7 @@
                 
                 let option = document.createElement('option'); 
                 item['name'] = item['name'].trim();
-                option.value = item['name'].toLowerCase().replaceAll('º','+').replaceAll('ª','+').replaceAll('+ ','+').replaceAll('lamentações de jeremias', 'lamentações');
+                option.value = item['name'].toLowerCase().replaceAll('tempobo','diabo').replaceAll('º','+').replaceAll('ª','+').replaceAll('+ ','+').replaceAll('lamentações de jeremias', 'lamentações');
 
                 option.innerHTML = `${item['name']} (${item['chapters']})`;
 
