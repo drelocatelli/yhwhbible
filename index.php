@@ -199,7 +199,7 @@
     let bookRegex = /(?<=book\=)(?:\d%2B[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*|[a-zA-ZÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑáàâãéèêíïóôõöúçñ]*)/gm
     let chapterRegex = /(?<=chapter\=)[0-9]*/gm
 
-    let selectedBook = params.match(bookRegex)[0].replaceAll('%2B','+');
+    let selectedBook = params.match(bookRegex)[0].replaceAll('muitotas','muitas').replaceAll('%2B','+');
     let selectedChapter = params.match(chapterRegex)[0].replaceAll('%2B','+');
 
 
