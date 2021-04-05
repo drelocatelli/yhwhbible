@@ -231,6 +231,9 @@
 
             let bookTitle = selectedBook.replace('+', ' ')
 
+            console.dir(select)
+
+            // info.innerHTML = `<h1>${bookTitle} ${selectedChapter}</h1><h3>| Livro: ${item['group']}</h3><h3>| Autor: ${item['author']}</h3>`
 
             response.forEach(function(item){ 
          
@@ -248,7 +251,7 @@
                 
                 select.appendChild(option)
 
-                info.innerHTML = `<h1>${bookTitle} ${selectedChapter}</h1><h3>| Livro: ${item['group']}</h3><h3>| Autor: ${item['author']}</h3>`
+                
 
 
             });
