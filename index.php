@@ -17,8 +17,6 @@
 <body>
 
     <span id="top" style="position:absolute; top:0;"></span>
-    <span id="bottom" style="position:absolute; bottom:0;"></span>
-
 
     <div id="center">
         <form method="get">
@@ -32,7 +30,9 @@
         <textarea name="escrituras"></textarea>
 
         <div id="content">
-        <a href="#bottom" class='btn btn-default'>DESCER <i class="fas fa-angle-double-down"></i></a>
+        <div class="button">
+            <a href="#bottom" class='btn btn-default'>DESCER <i class="fas fa-angle-double-down"></i></a>
+        </div>
             <div id="info">
                 </div>
 
@@ -58,12 +58,21 @@
         
 
     </div>
+
+    <span id="bottom"></span>
+
     
 </body>
 </html>
 
 <style>
     body{font-size:62.5%;}
+
+    .button {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
 
     h3 {
         margin-top:3px;
