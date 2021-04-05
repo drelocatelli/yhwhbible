@@ -17,6 +17,8 @@
 <body>
 
     <span id="top" style="position:absolute; top:0;"></span>
+    <span id="bottom" style="position:absolute; bottom:0;"></span>
+
 
     <div id="center">
         <form method="get">
@@ -30,6 +32,7 @@
         <textarea name="escrituras"></textarea>
 
         <div id="content">
+        <a href="#bottom" class='btn btn-default'>DESCER <i class="fas fa-angle-double-down"></i></a>
             <div id="info">
                 </div>
 
@@ -41,7 +44,7 @@
             <div class="buttons">
                 <div class="controls">
                     <a href="javascript:void(0);" class='btn btn-default' name='anterior'>ANTERIOR</a>
-                    <a href="#top" class="btn btn-default">TOPO <i class="fas fa-angle-double-up"></i></a>
+                    <a href="#top" class="btn btn-default">SUBIR <i class="fas fa-angle-double-up"></i></a>
                     <a href="javascript:void(0);" class='btn btn-default' name='proximo'>PRÓXIMO</a>
                 </div>
                 <div class="copy">
