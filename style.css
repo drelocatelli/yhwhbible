@@ -5,7 +5,7 @@ body{
 }
 
 a{
-  color:rgb(8, 163, 235);
+  color:#ffcc3b;
   text-decoration: none;
   font-size:20px;
   padding: 5px;
@@ -120,9 +120,9 @@ a{
 }
 
 .btn-default {
-    color: #fff;
-    background-color: #00bcd4;
-    border-color: #2196f3;
+    color: #6b692d;
+    background-color: #ffeb3b;
+    border-color: #ffcc3b;
     position: relative;
     top: -1px;
     box-sizing: border-box;
@@ -131,9 +131,8 @@ a{
 }
 
 .btn-default:hover {
-    color: #fff;
-    background-color: #00aac0;
-    border-color: #1982d8;
+    background-color: #ffeb3bcc;
+    border-color: #ffcc3bcc;
 }
 
 
