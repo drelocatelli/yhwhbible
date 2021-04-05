@@ -333,7 +333,6 @@
 
         book = ''
         books.forEach(function(book){
-            console.log(String(book.dataset.chapters))
 
             if(book.selected == true) {
                 info.innerHTML = `<h1>${bookTitle} ${selectedChapter}</h1><h3>| Livro: ${book.dataset.group}</h3><h3>| Autor: ${book.dataset.author}</h3>`
