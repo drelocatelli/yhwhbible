@@ -10,6 +10,10 @@ $(document).ready(function(){
         }, 300000, 'swing', function () {
             window.location.hash = target;
         });
+
+        // document.onclick = function(){
+        //     alert('stop')
+        // }
     });
 
     $('a[href^="#bottom2"]').on('click',function (e) {
