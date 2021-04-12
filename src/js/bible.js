@@ -26,11 +26,11 @@ let params = decodeURI(window.location.search.substr(1));
 if (params == "") { 
     if('params' in localStorage){
         window.location.href = window.location.href+localStorage.getItem("params")
-    }else if(params == 'i=1'){
-        window.location.href = window.location.href+"?book=gênesis&chapter=1"
     }else{
         window.location.href = window.location.href+"?book=gênesis&chapter=1"
     }
+}else if(params == 'i=1'){
+    window.location.href = window.location.href+"?book=gênesis&chapter=1"
 }
 
  // salva ultimo texto lido
