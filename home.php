@@ -5,9 +5,8 @@
     });
 
     fetch(request).then(function(response) { return response.text() }).then(function(response){
-        response = JSON.parse(response)
 
-        console.log(response)
+        document.body.innerHTML = response;
         
     })
 </script>
